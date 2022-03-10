@@ -30,7 +30,7 @@ namespace DynamicCRUD.Sample.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=DynamicCRUD;Integrated Security=true");
+            optionsBuilder.UseSqlServer(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=CrudO;Integrated Security=true");
         }
 
     }

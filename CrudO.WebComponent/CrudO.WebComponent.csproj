@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DynamicCRUD.API\DynamicCRUD.API.csproj" />
+    <ProjectReference Include="..\CrudO.API\CrudO.API.csproj" />
   </ItemGroup>
 
 </Project>
