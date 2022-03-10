@@ -1,0 +1,10 @@
+<div class="row mb-3" [formGroup]="FormGroup">
+    <div class="col-sm-10 offset-sm-2">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check-box-{{Field.key}}" [formControlName]="'value'">
+            <label class="form-check-label" for="check-box-{{Field.key}}">
+        {{Field.title}}
+      </label>
+        </div>
+    </div>
+</div>

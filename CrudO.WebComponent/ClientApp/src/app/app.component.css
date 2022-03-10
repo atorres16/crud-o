@@ -1,0 +1,15 @@
+.container {
+    padding: 1em;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    align-self: flex-end;
+}
+
+.pagination {
+    bottom: 0;
+}

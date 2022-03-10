@@ -1,0 +1,8 @@
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <ng-container *ngFor="let item of breadCrumbItems">
+            <li class="breadcrumb-item"><a href="#" (click)="itemClicked(item)">{{item.title}}</a></li>
+        </ng-container>
+
+    </ol>
+</nav>

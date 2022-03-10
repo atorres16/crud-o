@@ -1,0 +1,44 @@
+<!-- https://angular.io/guide/dynamic-form -->
+
+
+<form *ngIf="FormGroup && Form" [formGroup]="FormGroup" (ngSubmit)="onSubmit()">
+
+    <h4>{{FormGroup.controls['title'].value}}</h4>
+    <hr>
+
+    <span *ngVar="FormGroup.controls['properties'] as Fields" [formArrayName]="'properties'">
+    <span *ngFor="let field of Form.properties;let i=index">
+
+      <ng-container *ngVar="Fields.controls[i] as Field">
+        <span *ngIf="!field.isPrimaryKey" [formGroup]="Field">
+          <fieldset [disabled]="field.readOnly" [hidden]="field.hidden">
+            <span [ngSwitch]="field.inputType">
+              <app-input-text *ngSwitchCase="'text'" [Form]="Form" [Field]="field" [FormGroup]="Field">
+              </app-input-text>
+
+              <app-input-text *ngSwitchCase="'number'" [Form]="Form" [Field]="field" [FormGroup]="Field">
+              </app-input-text>
+
+              <app-check-box-control *ngSwitchCase="'checkbox'" [Form]="Form" [Field]="field" [FormGroup]="Field">
+              </app-check-box-control>
+
+
+
+            </span>
+
+    </fieldset>
+    </span>
+    </ng-container>
+    </span>
+    </span>
+
+    <div id="liveAlertPlaceholder">
+
+    </div>
+
+
+    <div class="flex-container">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-danger" (click)="Delete()">Delete</button>
+    </div>
+</form>

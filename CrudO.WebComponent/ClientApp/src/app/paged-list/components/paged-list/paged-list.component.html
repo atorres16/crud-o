@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="header">
+        <h4>{{data?.title}}</h4>
+        <button type="button" class="btn btn-primary" (click)="Add()">Add</button>
+    </div>
+</div>
+<hr>
+<div *ngFor="let dataItem of data?.items">
+    <div class="flex-container">
+
+        <a [routerLink]="[]" (click)="openDataItem(dataItem)"><i class="bi bi-caret-right-fill"></i>
+      {{dataItem.title}}</a>
+    </div>
+</div>

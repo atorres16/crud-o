@@ -1,0 +1,47 @@
+
+
+
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light">{{FormsContext?.title}}</div>
+        <app-menu [menu]="FormsContext?.menu" (itemClicked)="menuItemClicked($event)"></app-menu>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <!-- <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <app-bread-crumb [breadCrumbItems]="BreadCrumbItems" (breadCrumbItemClicked)="breadCrumbItemClicked($event)">
+                    </app-bread-crumb>
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <li class="nav-item active"><a class="nav-link" href="#">{{currentUser}}</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page content-->
+        <div class="container">
+
+            <app-select-from-catalog [hidden]="!CatalogData || currentControl!==CatalogData" [Data]="CatalogData" (onPageClicked)="selectFromCatalogPageClicked($event)" (OnSearch)="OnCatalogSearch($event)" (OnOk)="OnSelectFromCatalogOk($event)"></app-select-from-catalog>
+            <app-alert></app-alert>
+            <app-paged-list [hidden]="currentControl!==FormsContext?.data" [data]="FormsContext?.data" (AddNewDataItem)="AddNewDataItem()" (OpenDataItem)="OpenDataItem($event)" (EditDataItem)="EditDataItem($event)">
+            </app-paged-list>
+
+            <app-form [hidden]="currentControl!==FormsContext?.form" (SaveClicked)="SaveClicked($event)" (DeleteClicked)="DeleteClicked($event)">
+            </app-form>
+            <hr>
+
+            <app-pagination [hidden]="currentControl!==FormsContext?.data" class="pagination" *ngIf="FormsContext && FormsContext.data && FormsContext.data.totalPages" [totalPages]="FormsContext?.data?.totalPages!" (pageClicked)="pageClicked($event)"></app-pagination>
+
+        </div>
+
+
+    </div>
+</div>

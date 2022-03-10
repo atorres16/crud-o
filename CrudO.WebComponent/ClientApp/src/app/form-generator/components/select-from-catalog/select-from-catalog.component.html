@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h5 class="modal-title">Select from catalog</h5>
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search..." aria-label="search" aria-describedby="search"
+    [(ngModel)]="SearchWord">
+  <button class="btn btn-outline-secondary" type="button" id="search" (click)="Search()">Search</button>
+</div>
+<select class="form-select" multiple aria-label="multiple select example" [(ngModel)]="SelectedDataItem">
+  <option *ngFor="let dataItem of Data?.items" [value]="dataItem">
+    {{dataItem.title}}
+  </option>
+</select>
+
+<hr>
+<app-pagination class="pagination" *ngIf="Data && Data.totalPages" [totalPages]="Data?.totalPages!"
+  (pageClicked)="pageClicked($event)"></app-pagination>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+  <button type="button" class="btn btn-primary" (click)="Ok()">Ok</button>
+</div>

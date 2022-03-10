@@ -1,0 +1,1 @@
+ng build --base-href /LinInfo.Forms.Web/ --watch --c development
