@@ -1,5 +1,5 @@
-﻿using DynamicCRUD.Attributes;
-using DynamicCRUD.Sample.Models;
+﻿using CrudO.Attributes;
+using CrudO.Sample.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Sample.DAL
+namespace CrudO.Sample.DAL
 {
     [FormsContext(Title = "Root")]
     public class Db : DbContext

@@ -1,12 +1,12 @@
 ﻿
-using DynamicCRUD.Abstract;
+using CrudO.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Attributes
+namespace CrudO.Attributes
 {
 
     [System.AttributeUsage(System.AttributeTargets.Property)]

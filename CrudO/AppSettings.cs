@@ -1,10 +1,10 @@
-﻿using DynamicCRUD.Abstract;
+﻿using CrudO.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD
+namespace CrudO
 {
     public class AppSettings
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Attributes
+namespace CrudO.Attributes
 {
   public  class ApiGetDataPathAttribute:ApiPathAttribute
     {

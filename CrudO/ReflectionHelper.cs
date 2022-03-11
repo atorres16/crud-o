@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using System.Collections;
 
 using Microsoft.EntityFrameworkCore;
-using DynamicCRUD.Data;
+using CrudO.Data;
 
-namespace DynamicCRUD
+namespace CrudO
 {
     public static class ReflectionHelper
     {

@@ -1,4 +1,4 @@
-using DynamicCRUD.Sample.DAL;
+using CrudO.Sample.DAL;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Sample
+namespace CrudO.Sample
 {
     public class Program
     {

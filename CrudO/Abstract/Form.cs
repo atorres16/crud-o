@@ -1,6 +1,6 @@
 ﻿
-using DynamicCRUD.Attributes;
-using DynamicCRUD.Logic;
+using CrudO.Attributes;
+using CrudO.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Abstract
+namespace CrudO.Abstract
 {
     public class Form<T> : FormBase where T : class, new()
     {

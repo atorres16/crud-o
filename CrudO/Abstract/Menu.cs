@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Abstract
+namespace CrudO.Abstract
 {
    public class Menu
     {

@@ -1,6 +1,6 @@
-﻿using DynamicCRUD.API.Services;
-using DynamicCRUD.Logic;
-using DynamicCRUD.Abstract;
+﻿using CrudO.API.Services;
+using CrudO.Logic;
+using CrudO.Abstract;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
-namespace DynamicCRUD.API.Controllers
+namespace CrudO.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

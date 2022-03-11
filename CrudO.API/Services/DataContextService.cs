@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.API.Services
+namespace CrudO.API.Services
 {
     public class FormsContextService
     {
