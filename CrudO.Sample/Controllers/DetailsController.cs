@@ -1,9 +1,9 @@
-﻿using DynamicCRUD.Abstract;
-using DynamicCRUD.API.Controllers;
-using DynamicCRUD.API.Services;
-using DynamicCRUD.Logic;
-using DynamicCRUD.Sample.DAL;
-using DynamicCRUD.Sample.Models;
+﻿using CrudO.Abstract;
+using CrudO.API.Controllers;
+using CrudO.API.Services;
+using CrudO.Logic;
+using CrudO.Sample.DAL;
+using CrudO.Sample.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Sample.Controllers
+namespace CrudO.Sample.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

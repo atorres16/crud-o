@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using DynamicCRUD.Attributes;
-using DynamicCRUD.Abstract;
+using CrudO.Attributes;
+using CrudO.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD
+namespace CrudO
 {
     public static class Mapping
     {

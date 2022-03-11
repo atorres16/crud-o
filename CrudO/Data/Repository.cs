@@ -1,20 +1,17 @@
-﻿
-using DynamicCRUD.CRUD;
-using DynamicCRUD.Query;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Data
+namespace CrudO.Data
 {
     /// <summary>
     /// Used only to create generic queries
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Repository<T> :IRepository where T : class, IActivable, IDeletable
+    public class Repository<T> :IRepository where T : class
     {
         public DbContext Db { get; set;}
 
@@ -22,40 +19,7 @@ namespace DynamicCRUD.Data
         {
             this.Db = db;
         }
-        public virtual IQueryable<T> GetGenericQuery(IQueryOptions queryOptions = null)
-        {
-            if (queryOptions == null)
-            {
-                queryOptions = new QueryOptions();
-            }
-
-
-            var query = Db.Set<T>() as IQueryable<T>;
-
-            if (queryOptions.IncludePaths.Any())
-            {
-                foreach (string includePath in queryOptions.IncludePaths)
-                {
-                    query = query.Include<T>(includePath);
-                }
-            }
-
-            if (!queryOptions.IncludeDeleted)
-            {
-                query = query.Where(s => !s.IsDeleted);
-            }
-            if (!queryOptions.IncludeInactive)
-            {
-                query = query.Where(s => s.IsActive);
-            }
-            return query;
-        }
-
-        public virtual IQueryable GetQuery(IQueryOptions queryOptions = null)
-        {
-            return GetGenericQuery(queryOptions);
-        }
-
+     
 
         public T GenericFind(Object id)
         {
@@ -91,6 +55,16 @@ namespace DynamicCRUD.Data
             Db.Entry(dbItem).State = EntityState.Modified;
         }
 
-       
+        public virtual IQueryable GetQuery()
+        {
+            return GetGenericQuery();
+        }
+        public virtual IQueryable<T> GetGenericQuery()
+        {
+
+            var query = Db.Set<T>() as IQueryable<T>;
+
+            return query;
+        }
     }
 }

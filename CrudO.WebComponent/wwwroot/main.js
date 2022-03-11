@@ -216,7 +216,7 @@ class AppComponent {
                 this.httpClientService.post(this.serverUrl + apiPath, form)
                     .subscribe((x) => {
                     this.ngZone.run(() => {
-                        this.FormComponent.alert("Cambios Guardados Correctamente", "success");
+                        this.FormComponent.alert("Changes Saved Ok", "success");
                     });
                 }, this.ShowError);
             }
@@ -260,7 +260,7 @@ class AppComponent {
                 item.type = form.type;
                 this.httpClientService.post(this.serverUrl + apiPath, item)
                     .subscribe((x) => {
-                    this.FormComponent.alert("Elemento Eliminado Correctamente", "success");
+                    this.FormComponent.alert("Item Deleted Correctly", "success");
                 }, (err) => { this.ShowError; });
             }
         };
@@ -277,7 +277,7 @@ class AppComponent {
                 this.AlertComponent.alert(err, "danger");
             }
             else {
-                this.AlertComponent.alert("Ha ocurrido un error", "danger");
+                this.AlertComponent.alert("An error has occurred", "danger");
             }
         };
         this.BreadCrumbItems = [];

@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "DynamicCRUD.Sample": {
+    "CrudO.Sample": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

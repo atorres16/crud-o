@@ -198,7 +198,7 @@ export class AppComponent implements OnInit {
       this.httpClientService.post(this.serverUrl + apiPath, form)
         .subscribe((x: number) => {
           this.ngZone.run(() => {
-            this.FormComponent.alert("Cambios Guardados Correctamente", "success");
+            this.FormComponent.alert("Changes Saved Ok", "success");
           });
 
         }, this.ShowError);
@@ -256,7 +256,7 @@ export class AppComponent implements OnInit {
       this.httpClientService.post(this.serverUrl + apiPath, item)
         .subscribe((x: Data) => {
 
-          this.FormComponent.alert("Elemento Eliminado Correctamente", "success");
+          this.FormComponent.alert("Item Deleted Correctly", "success");
         }, (err: any) => { this.ShowError });
     }
   }
@@ -274,7 +274,7 @@ export class AppComponent implements OnInit {
       this.AlertComponent.alert(err, "danger");
     }
     else {
-      this.AlertComponent.alert("Ha ocurrido un error", "danger");
+      this.AlertComponent.alert("An error has occurred", "danger");
     }
   }
 

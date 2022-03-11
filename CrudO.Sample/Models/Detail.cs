@@ -1,5 +1,4 @@
-﻿using DynamicCRUD.Attributes;
-using DynamicCRUD.CRUD;
+﻿using CrudO.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,12 +6,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Sample.Models
+namespace CrudO.Sample.Models
 {
     [FormsContext(Title ="Detail")]
     [ApiGetDataPath("/api/Details/GetData")]
     [ApiGetFormPath("/api/Details/GetForm")]
-    public class Detail:ICreatable,IActivable,IModifiable,IDeletable
+    public class Detail
     {
         [Item(IsPrimaryKey =true)]
         public int Id { get; set; }
@@ -26,15 +25,6 @@ namespace DynamicCRUD.Sample.Models
         public int IdMaster { get; set; }
         public Master Master { get; set; }
 
-        [Required]
-        public string CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
-        [Item]
-        public bool IsActive { get; set; }
-        public DateTime? ModifiedDate { get; set; }
-        public string ModifiedBy { get; set; }
-        public bool IsDeleted { get; set; }
-        public DateTime? DeletedDate { get; set; }
-        public string DeletedBy { get; set; }
+     
     }
 }

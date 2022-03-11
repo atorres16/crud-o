@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace DynamicCRUD.Sample.Pages
+namespace CrudO.Sample.Pages
 {
     public class IndexModel : PageModel
     {

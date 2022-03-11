@@ -1,5 +1,5 @@
-using DynamicCRUD.API;
-using DynamicCRUD.Sample.DAL;
+using CrudO.API;
+using CrudO.Sample.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DynamicCRUD.Sample
+namespace CrudO.Sample
 {
     public class Startup
     {

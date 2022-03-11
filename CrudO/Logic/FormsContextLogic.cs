@@ -1,6 +1,6 @@
-﻿using DynamicCRUD.Attributes;
-using DynamicCRUD.Data;
-using DynamicCRUD.Abstract;
+﻿using CrudO.Attributes;
+using CrudO.Data;
+using CrudO.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,9 +8,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using DynamicCRUD.CRUD;
 
-namespace DynamicCRUD.Logic
+
+namespace CrudO.Logic
 {
     public static class FormsContextLogic
     {
@@ -166,11 +166,7 @@ namespace DynamicCRUD.Logic
             var pkType = GetTypeOfPrimaryKey(itemType);
             var pkValue = ReflectionHelper.GetTypedValue(pkType, item.Id.ToString());
             var dbItem = genericRepository.Find(pkValue);
-            var softDelete = dbItem as IDeletable;
-            softDelete.IsDeleted = true;
-            var traceable = dbItem as IDeletable;
-            traceable.DeletedBy = currentUser;
-            traceable.DeletedDate = DateTime.Now;
+            genericRepository.Db.Remove(dbItem);
             genericRepository.SetModified(dbItem);
             genericRepository.Save();
         }
@@ -245,15 +241,6 @@ namespace DynamicCRUD.Logic
             //object is new
             //create new instance
             var newItem = CreateDataObject(formBase);
-
-            //set tracing properties
-            var traceable = newItem as ICreatable;
-            traceable.CreatedBy = currentUser;
-            traceable.CreatedDate = DateTime.Now;
-
-            var activable = newItem as IActivable;
-            activable.IsActive = true;
-
             //add item to database
             genericRepository.Add(newItem);
         }
@@ -296,9 +283,7 @@ namespace DynamicCRUD.Logic
                 //set value
                 pi.SetValue(dbItem, typedValue);
             }
-            var traceable = dbItem as IModifiable;
-            traceable.ModifiedBy = currentUser;
-            traceable.ModifiedDate = DateTime.Now;
+        
             genericRepository.SetModified(dbItem);
         }
         public static string GetTitleAttributeValue(Object item)
